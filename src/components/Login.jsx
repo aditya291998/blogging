@@ -16,8 +16,10 @@ function Login({ width = "100px" }) {
     setError("");
     try {
       const session = await authService.login(data);
+      console.log("-login----session----",session);
       if (session) {
         const userData = await authService.getCurrentUser();
+        console.log("-login----userData----",session);
         if (userData) {
           dispatch(authLogin(userData));
           navigate("/");
