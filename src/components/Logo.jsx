@@ -2,7 +2,7 @@ import React from 'react'
 
 function Logo({width='100px'}) {
     return (
-        <div>Logo</div>
+        <img className="w-32 h-auto md:w-10 lg:w-12 rounded-full" src="blog.png" alt="Image description"/>
     
     )
 }

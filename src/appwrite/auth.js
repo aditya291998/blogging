@@ -18,9 +18,9 @@ export class AuthService {
         try {
             
             const userAccount = await this.account.create(ID.unique(), email, password, name);
-            console.log("******11****",userAccount);
+            //console.log("******11****",userAccount);
             if (userAccount) {
-                console.log("******12****",userAccount);
+                //console.log("******12****",userAccount);
                 // call another method
                 return this.login({email, password});
             } else {
@@ -33,7 +33,7 @@ export class AuthService {
 
     async login({email, password}) {
         try {
-            console.log("******10****");
+            //console.log("******10****");
             return await this.account.createEmailPasswordSession(email, password);
         } catch (error) {
             throw error;
@@ -42,7 +42,7 @@ export class AuthService {
 
     async getCurrentUser() {
         try {
-            console.log("---getCurrentUser----");
+            //console.log("---getCurrentUser----");
             return await this.account.get();
         } catch (error) {
             console.log("Appwrite serive :: getCurrentUser :: error", error);

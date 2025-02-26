@@ -4,7 +4,6 @@ import "./App.css";
 import authService from "./appwrite/auth";
 import { use } from "react";
 import { login, logout } from "./store/authSlice";
-console.log(login, logout,"@@@@@@@@@@@");
 import { Header, Footer } from "./components";
 import { Outlet } from "react-router-dom";
 
@@ -17,10 +16,10 @@ function App() {
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
-          console.log("--------login",userData);
+          // console.log("--------login",userData);
           dispatch(login({ userData }));
         } else {
-          console.log("--------logout",userData);
+          // console.log("--------logout",userData);
           dispatch(logout());
         }
       })
@@ -35,7 +34,7 @@ function App() {
       <div className="w-full block ">
         <Header />
         <main className="text-2xl">
-          TODO: <Outlet />
+          <Outlet />
         </main>
         <Footer />
       </div>

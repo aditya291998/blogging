@@ -9,7 +9,7 @@ function AllPosts() {
 
   useEffect(() => {
     appwriteService.getPosts([]).then((posts) => {
-      console.log("---------", posts, userData);
+    //   console.log("---------", posts, userData);
       if (posts) {
         setPosts(posts.documents);
       }

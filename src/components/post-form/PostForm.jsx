@@ -20,7 +20,7 @@ export default function PostForm({ post }) {
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
-    console.log("-----submit---",data,userData);
+    // console.log("-----submit---",data,userData);
     if (post) {
       data.image[0] ? appwriteService.uploadFile(data.image[0]) : null;
 
@@ -40,7 +40,7 @@ export default function PostForm({ post }) {
         if (file) {
             const fileId = file.$id;
             data.featuredImage = fileId;
-            console.log("----post form userdata-----", userData,file);
+            // console.log("----post form userdata-----", userData,file);
             const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
 
             if (dbPost) {
@@ -63,7 +63,7 @@ export default function PostForm({ post }) {
   },[])
 
   React.useEffect(()=> {
-    console.log("--------hell--------");
+    //console.log("--------hell--------");
     const subscription = watch((value, {name}) => {
         if (name === "title") {
             setValue("slug", slugTransform(value.title), { shouldValidate: true });
